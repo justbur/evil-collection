@@ -597,7 +597,8 @@ instead of the modes in `evil-collection-mode-list'."
                                 m mode-keymaps))))))
   (when evil-collection-want-unimpaired-p
     (evil-collection-require 'unimpaired)
-    (evil-collection-unimpaired-setup)))
+    (when (fboundp 'evil-collection-unimpaired-setup)
+      (evil-collection-unimpaired-setup))))
 
 (defvar evil-collection-delete-operators '(evil-delete
                                            evil-cp-delete
